@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 export default function Footer({ theme }) {
   return (
     <footer id="contact" className="container">
-      <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="p-5 rounded-4" style={{ backgroundColor: theme === 'dark' ? '#0a0a0a' : '#ffffff', color: theme === 'dark' ? 'white' : '#000000' }}>
+      <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="py-5">
         <div className="mb-4 text-uppercase tracking-wider opacity-75" style={{ letterSpacing: '0.1em', fontSize: '0.8rem' }}>
           CONTACT / NORTH MEDIA
         </div>
         
-        <h2 className="mb-4 text-uppercase" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
+        <h2 className="mb-4 text-uppercase" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: 'clamp(1.8rem, 6vw, 4rem)' }}>
           YOUR NEXT BIG IDEA STARTS HERE.
         </h2>
         

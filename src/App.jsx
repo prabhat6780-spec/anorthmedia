@@ -10,7 +10,18 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Explore from './components/Explore';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme) {
+        return savedTheme;
+      }
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+    }
+    return 'light';
+  });
   const location = useLocation();
 
   useEffect(() => {
@@ -27,14 +38,8 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    // Check system preference on load
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-  }, []);
-
-  useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('app-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

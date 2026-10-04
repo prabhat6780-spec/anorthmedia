@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <section id="about" className="py-5 container" style={{ marginTop: '5rem', marginBottom: '5rem' }}>
+    <section id="about" className="container" style={{ paddingTop: '120px', paddingBottom: '80px' }}>
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="row">
         <div className="col-12 col-md-10 col-lg-8">
-          <h2 className="mb-4" style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+          <h2 className="mb-4" style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: 'clamp(1.8rem, 5vw, 4rem)' }}>
             <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingRight: '0.1em' }}>Behind </span>
             every great brand<br />is a 
             <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingLeft: '0.1em', paddingRight: '0.1em' }}> story </span>

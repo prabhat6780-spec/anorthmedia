@@ -6,7 +6,7 @@ import Services from './Services';
 
 export default function Explore() {
   return (
-    <div className="pt-5 mt-5">
+    <div>
       <About />
       <Services />
       <Experience />
