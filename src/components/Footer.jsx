@@ -21,7 +21,7 @@ export default function Footer({ theme }) {
         <div className="p-4 rounded-4 border border-secondary border-opacity-25 mb-5">
           <h3 className="h6 fw-bold mb-3 text-uppercase tracking-wider">Let's talk about your project</h3>
           <p className="opacity-75 mb-4">Tell us what you're looking for, and our team will get in touch.</p>
-          <button className={`btn ${theme === 'dark' ? 'btn-light text-dark' : 'btn-dark text-white'} rounded-pill px-4 py-2 fw-bold w-100 w-md-auto d-flex align-items-center justify-content-center gap-2`}>
+          <button className="btn rounded-pill px-4 py-2 fw-bold w-100 w-md-auto d-flex align-items-center justify-content-center gap-2" style={{ backgroundColor: 'var(--text-color)', color: 'var(--bg-color)', transition: 'all 0.3s ease' }}>
             START A CONVERSATION <i className="bi bi-arrow-up-right"></i>
           </button>
         </div>

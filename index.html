@@ -5,12 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>anorthmedia</title>
+    <meta name="theme-color" content="#FAF9F6" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('app-theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector("meta[name='theme-color']").setAttribute('content', '#4A0F14');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body>
+  <body class="preload">
+    <script>
+      // Prevent CSS transitions from firing on initial load
+      setTimeout(function() {
+        document.body.classList.remove('preload');
+      }, 100);
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

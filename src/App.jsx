@@ -40,6 +40,12 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('app-theme', theme);
+    
+    // Dynamically update browser theme color
+    const metaThemeColor = document.querySelector("meta[name='theme-color']");
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#4A0F14' : '#FAF9F6');
+    }
   }, [theme]);
 
   const toggleTheme = () => {

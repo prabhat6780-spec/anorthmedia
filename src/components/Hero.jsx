@@ -4,8 +4,17 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className="hero">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} transition={{ duration: 2 }} className="bg-shape shape-1 position-absolute rounded-circle" style={{ filter: 'blur(80px)' }}></motion.div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} transition={{ duration: 2, delay: 0.5 }} className="bg-shape shape-2 position-absolute rounded-circle" style={{ filter: 'blur(80px)' }}></motion.div>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} transition={{ duration: 2 }} className="position-absolute w-100 h-100" style={{ zIndex: 0, top: 0, left: 0, pointerEvents: 'none', isolation: 'isolate' }}>
+        <div className="position-absolute" style={{ top: '-5%', left: '-5%', transform: 'rotate(-5deg)', fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontSize: 'clamp(12rem, 28vw, 35rem)', color: 'var(--bg-type-color)', lineHeight: 0.8, whiteSpace: 'nowrap', userSelect: 'none' }}>
+          digital
+        </div>
+        <div className="position-absolute" style={{ top: '20%', right: '-10%', transform: 'rotate(-5deg)', fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontSize: 'clamp(12rem, 28vw, 36rem)', color: 'var(--bg-type-color)', lineHeight: 0.8, whiteSpace: 'nowrap', userSelect: 'none' }}>
+          era
+        </div>
+        <div className="position-absolute" style={{ bottom: '0%', left: '-5%', transform: 'rotate(-5deg)', fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontSize: 'clamp(12rem, 28vw, 36rem)', color: 'var(--bg-type-color)', lineHeight: 0.8, whiteSpace: 'nowrap', userSelect: 'none' }}>
+          brand
+        </div>
+      </motion.div>
       <div className="container position-relative z-1 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-uppercase tracking-wider mb-5 opacity-75 fw-medium text-nowrap" style={{ letterSpacing: '0.2em', fontSize: 'clamp(0.65rem, 2.5vw, 1.4rem)' }}>
           ARTISTS &nbsp;/&nbsp; BRANDS &nbsp;/&nbsp; BUSINESSES

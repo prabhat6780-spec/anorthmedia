@@ -37,7 +37,7 @@ export default function Navbar({ theme, toggleTheme }) {
   }, [location]);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${theme === 'dark' ? 'navbar-dark' : 'navbar-light'} ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease', backgroundColor: theme === 'dark' ? '#000000' : '#ffffff' }}>
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease' }}>
       <div className="container flex-wrap flex-md-nowrap align-items-center justify-content-between">
         <Link className="navbar-brand d-flex align-items-center" to="/">
           <img src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" height="50" className="d-inline-block align-text-top" />
@@ -53,8 +53,8 @@ export default function Navbar({ theme, toggleTheme }) {
         )}
         
         <div className="d-flex align-items-center ms-auto ms-md-0 order-2 order-md-3">
-          <button onClick={toggleTheme} className={`btn rounded-circle d-flex align-items-center justify-content-center border-0 ${theme === 'dark' ? 'text-white' : 'text-dark'}`} style={{ width: '35px', height: '35px', backgroundColor: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)' }} aria-label="Toggle Theme">
-            {theme === 'dark' ? <Sun size={18} color="#ffc107" /> : <Moon size={18} />}
+          <button onClick={toggleTheme} className="btn rounded-circle d-flex align-items-center justify-content-center border-0" style={{ width: '35px', height: '35px', backgroundColor: 'var(--text-color)', color: 'var(--bg-color)' }} aria-label="Toggle Theme">
+            {theme === 'dark' ? <Sun size={18} color="currentColor" /> : <Moon size={18} color="currentColor" />}
           </button>
         </div>
       </div>
