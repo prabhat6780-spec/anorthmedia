@@ -4,6 +4,7 @@
   --accent-color: #8B1018;
   --nav-bg: #FAF9F6;
   --bg-type-color: #F3D9D9;
+  --text-accent-color: #D64045; /* Vibrant red for light mode */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -21,6 +22,7 @@
   --accent-color: #F8F0E5;
   --nav-bg: #4A0F14;
   --bg-type-color: #6B2025;
+  --text-accent-color: #E86A73; /* Bright, legible red for dark mode */
 }
 
 * {
