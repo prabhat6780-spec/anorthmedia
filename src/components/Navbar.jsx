@@ -37,10 +37,10 @@ export default function Navbar({ theme, toggleTheme }) {
   }, [location]);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease' }}>
+    <nav className={`navbar navbar-expand-lg fixed-top py-2 py-md-3 ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease' }}>
       <div className="container flex-wrap flex-md-nowrap align-items-center justify-content-between">
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" height="50" className="d-inline-block align-text-top" />
+          <img src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" className="d-inline-block align-text-top" style={{ height: 'clamp(35px, 6vw, 50px)' }} />
         </Link>
 
         {isExplorePage && (
