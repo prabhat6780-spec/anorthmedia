@@ -42,9 +42,8 @@ export default function Footer({ theme }) {
           </div>
         </div>
 
-        <div className="mt-5 pt-4 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center opacity-50 small">
-          <div>NORTH MEDIA &copy; {new Date().getFullYear()}</div>
-          <img src={theme === 'dark' ? logoLight : logoDark} alt="Anorthmedia" height="24" className="opacity-50" />
+        <div className="mt-5 pt-4 border-top border-secondary border-opacity-25 text-center opacity-75 small" style={{ letterSpacing: '0.05em' }}>
+          <div>Copyright {new Date().getFullYear()} &copy; Anorthmedia. All Rights Reserved</div>
         </div>
       </motion.div>
     </footer>
