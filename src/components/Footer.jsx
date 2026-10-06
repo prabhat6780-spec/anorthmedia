@@ -21,18 +21,23 @@ export default function Footer({ theme }) {
         <div className="p-4 rounded-4 border border-secondary border-opacity-25 mb-5">
           <h3 className="h6 fw-bold mb-3 text-uppercase tracking-wider">Let's talk about your project</h3>
           <p className="opacity-75 mb-4">Tell us what you're looking for, and our team will get in touch.</p>
-          <button className="btn rounded-pill px-4 py-2 fw-bold w-100 w-md-auto d-flex align-items-center justify-content-center gap-2" style={{ backgroundColor: 'var(--text-color)', color: 'var(--bg-color)', transition: 'all 0.3s ease' }}>
+          <a href="mailto:anushkacheema@anorthmedia.com" className="btn rounded-pill px-4 py-2 fw-bold w-100 w-md-auto d-flex align-items-center justify-content-center gap-2 text-decoration-none" style={{ backgroundColor: 'var(--text-color)', color: 'var(--bg-color)', transition: 'all 0.3s ease' }}>
             START A CONVERSATION <i className="bi bi-arrow-up-right"></i>
-          </button>
+          </a>
         </div>
 
         <div className="mt-5">
           <h3 className="h6 fw-bold mb-4 text-uppercase tracking-wider">Get in touch</h3>
           <div className="d-flex flex-column gap-3 opacity-75">
-            <a href="mailto:info@anorthmedia.com" className="text-decoration-none" style={{ color: 'inherit' }}>info@anorthmedia.com</a>
-            <a href="#" className="text-decoration-none" style={{ color: 'inherit' }}>@anorthmedia</a>
-            <div>
-              <a href="#" className="text-decoration-none" style={{ color: 'inherit' }}>Instagram</a> &bull; <a href="#" className="text-decoration-none" style={{ color: 'inherit' }}>Facebook</a>
+            <a href="mailto:anushkacheema@anorthmedia.com" className="text-decoration-none" style={{ color: 'inherit' }}>anushkacheema@anorthmedia.com</a>
+            <a href="https://anorthmedia.com" target="_blank" rel="noopener noreferrer" className="text-decoration-none" style={{ color: 'inherit' }}>@anorthmedia</a>
+            <div className="d-flex gap-4 mt-2">
+              <a href="https://www.instagram.com/anorthmedia?stkn=MWMwOWwwZ25vcDV3ZA==" target="_blank" rel="noopener noreferrer" className="text-decoration-none transition-opacity" style={{ color: 'inherit' }} aria-label="Instagram">
+                <i className="bi bi-instagram fs-4"></i>
+              </a>
+              <a href="https://www.facebook.com/share/1K1hgtaAFn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-decoration-none transition-opacity" style={{ color: 'inherit' }} aria-label="Facebook">
+                <i className="bi bi-facebook fs-4"></i>
+              </a>
             </div>
           </div>
         </div>
