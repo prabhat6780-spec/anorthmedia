@@ -22,13 +22,13 @@ export default function IntroAnimation({ onComplete }) {
         layoutId="brand-logo"
         src={logoDark} // Use the white logo on the dark burgundy background
         alt="Anorthmedia" 
-        initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-        animate={{ opacity: 1, scale: 2.5, filter: 'blur(0px)' }}
+        initial={{ opacity: 0, scale: 0.5, filter: 'blur(10px)' }}
+        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         transition={{ 
           default: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
           layout: { duration: 2.2, ease: 'easeInOut' }
         }}
-        style={{ height: '40px' }} 
+        style={{ height: 'clamp(70px, 12vw, 100px)' }} 
       />
     </motion.div>
   );
