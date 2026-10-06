@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Explore from './components/Explore';
+import IntroAnimation from './components/IntroAnimation';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -23,6 +25,7 @@ function App() {
     return 'light';
   });
   const location = useLocation();
+  const [isIntroDone, setIsIntroDone] = useState(false);
 
   useEffect(() => {
     if (location.hash) {
@@ -53,18 +56,25 @@ function App() {
   };
 
   return (
-    <>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <Footer theme={theme} />
-          </>
-        } />
-        <Route path="/explore" element={<Explore />} />
-      </Routes>
-    </>
+    <LayoutGroup>
+      <AnimatePresence>
+        {!isIntroDone && <IntroAnimation key="intro" onComplete={() => setIsIntroDone(true)} />}
+      </AnimatePresence>
+      {isIntroDone && (
+        <>
+          <Navbar theme={theme} toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Footer theme={theme} />
+              </>
+            } />
+            <Route path="/explore" element={<Explore />} />
+          </Routes>
+        </>
+      )}
+    </LayoutGroup>
   );
 }
 

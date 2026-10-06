@@ -11,6 +11,7 @@ export default function Navbar({ theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const isExplorePage = location.pathname === '/explore';
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,10 +55,10 @@ export default function Navbar({ theme, toggleTheme }) {
   };
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top py-2 py-md-3 ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease', backgroundColor: scrolled ? 'var(--bg-color)' : 'transparent' }}>
+    <nav className={`navbar navbar-expand-lg fixed-top py-2 py-md-3 ${scrolled && !isHome ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease', backgroundColor: scrolled ? 'var(--bg-color)' : 'transparent', borderBottom: (scrolled && !isHome) || (isExplorePage && !scrolled) ? '1px solid rgba(128, 128, 128, 0.1)' : '1px solid transparent' }}>
       <div className="container flex-wrap flex-md-nowrap align-items-center justify-content-between">
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <motion.img initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" className="d-inline-block align-text-top" style={{ height: 'clamp(35px, 6vw, 50px)' }} />
+          <motion.img layoutId="brand-logo" src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" className="d-inline-block align-text-top" style={{ height: 'clamp(35px, 6vw, 50px)' }} />
         </Link>
 
         {isExplorePage && (
