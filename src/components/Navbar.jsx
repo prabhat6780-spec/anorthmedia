@@ -3,6 +3,7 @@ import { Sun, Moon } from 'lucide-react';
 import logoLight from '../assets/anorthmedia1.PNG';
 import logoDark from '../assets/anorthmedia.PNG';
 
+import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -36,20 +37,38 @@ export default function Navbar({ theme, toggleTheme }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
+  const navVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top py-2 py-md-3 ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease' }}>
+    <nav className={`navbar navbar-expand-lg fixed-top py-2 py-md-3 ${scrolled ? 'shadow-sm' : ''}`} style={{ transition: 'all 0.3s ease', backgroundColor: scrolled ? 'var(--bg-color)' : 'transparent' }}>
       <div className="container flex-wrap flex-md-nowrap align-items-center justify-content-between">
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" className="d-inline-block align-text-top" style={{ height: 'clamp(35px, 6vw, 50px)' }} />
+          <motion.img initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} src={theme === 'dark' ? logoDark : logoLight} alt="Anorthmedia" className="d-inline-block align-text-top" style={{ height: 'clamp(35px, 6vw, 50px)' }} />
         </Link>
 
         {isExplorePage && (
-          <div className="navbar-nav flex-row justify-content-start justify-content-md-end gap-3 gap-md-4 order-3 order-md-2 mt-2 mt-md-0 w-100 w-md-auto flex-grow-1 align-items-center px-0 px-md-4" style={{ fontSize: '0.85rem' }}>
-            <a href="#about" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'about' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Origin</a>
-            <a href="#services" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'services' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Vision</a>
-            <a href="#experience" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'experience' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Insights</a>
-            <Link to="/#contact" className="nav-link text-uppercase fw-semibold px-0 px-md-2" style={{ letterSpacing: '0.05em' }}>Connect</Link>
-          </div>
+          <motion.div initial="hidden" animate="visible" variants={navVariants} className="navbar-nav flex-row justify-content-start justify-content-md-end gap-3 gap-md-4 order-3 order-md-2 mt-2 mt-md-0 w-100 w-md-auto flex-grow-1 align-items-center px-0 px-md-4" style={{ fontSize: '0.85rem' }}>
+            <motion.a variants={itemVariants} href="#about" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'about' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Origin</motion.a>
+            <motion.a variants={itemVariants} href="#services" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'services' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Vision</motion.a>
+            <motion.a variants={itemVariants} href="#experience" className={`nav-link text-uppercase fw-semibold px-0 px-md-2 ${activeSection === 'experience' ? 'active' : ''}`} style={{ letterSpacing: '0.05em' }}>Insights</motion.a>
+            <motion.div variants={itemVariants}>
+              <Link to="/#contact" className="nav-link text-uppercase fw-semibold px-0 px-md-2" style={{ letterSpacing: '0.05em' }}>Connect</Link>
+            </motion.div>
+          </motion.div>
         )}
         
         <div className="d-flex align-items-center ms-auto ms-md-0 order-2 order-md-3">

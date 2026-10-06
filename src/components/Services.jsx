@@ -26,7 +26,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-5 my-5 container">
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-5">
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.8 }} className="mb-5">
         <h2 className="mb-4" style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.04em', fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
           <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingRight: '0.1em' }}>What </span>
           we do.
@@ -37,14 +37,14 @@ export default function Services() {
       </motion.div>
       <div className="row g-4 mt-2 justify-content-center">
         {services.map((service, index) => (
-          <div key={index} className="col-md-6 col-lg-4">
+          <motion.div key={index} className="col-md-6 col-lg-4" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
             <div className="card h-100 border-0 p-4 shadow-sm text-center" style={{ backgroundColor: 'rgba(128,128,128,0.02)', borderRadius: '12px', color: 'var(--text-color)' }}>
               <div className="card-body d-flex flex-column justify-content-center">
                 <h3 className="h4 fw-bold mb-3">{service.title}</h3>
                 <p className="card-text opacity-75">{service.desc}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
