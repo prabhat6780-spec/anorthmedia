@@ -24,7 +24,10 @@ export default function IntroAnimation({ onComplete }) {
         alt="Anorthmedia" 
         initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
         animate={{ opacity: 1, scale: 2.5, filter: 'blur(0px)' }}
-        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }} // smooth cubic-bezier
+        transition={{ 
+          default: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+          layout: { duration: 2.2, ease: 'easeInOut' }
+        }}
         style={{ height: '40px' }} 
       />
     </motion.div>
