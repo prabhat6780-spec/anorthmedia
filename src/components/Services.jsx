@@ -31,7 +31,7 @@ export default function Services() {
           <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingRight: '0.1em' }}>What </span>
           we do.
         </motion.h2>
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.8, delay: 0.2 }} className="lead opacity-75 fs-5" style={{ maxWidth: '800px' }}>
+        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.8, delay: 0.2 }} className="opacity-75" style={{ maxWidth: '800px', lineHeight: 'clamp(1.4, 3vw, 1.8)', fontSize: 'clamp(1rem, 4vw, 1.25rem)' }}>
           We help brands and businesses build their digital presence, connect with their audience and grow through creative ideas and smart digital solutions.
         </motion.p>
       </div>
