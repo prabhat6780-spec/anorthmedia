@@ -8,13 +8,13 @@ export default function About() {
           <h2 className="mb-3 mb-md-4" style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900, lineHeight: 'clamp(1.05, 3vw, 1.1)', letterSpacing: '-0.02em', fontSize: 'clamp(2rem, 9vw, 4rem)' }}>
             <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingRight: '0.1em' }}>Behind </span>
             every great brand<br className="d-none d-md-block" />
-            <span className="d-inline d-md-none"> </span>is a 
+            <span className="d-inline d-md-none"> </span>is a
             <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 600, letterSpacing: '-0.02em', paddingLeft: '0.1em', paddingRight: '0.1em' }}> story </span>
             worth telling.
           </h2>
           <div className="opacity-75" style={{ lineHeight: 'clamp(1.4, 3vw, 1.8)', fontSize: 'clamp(1rem, 4vw, 1.25rem)' }}>
             <p className="mb-3 mb-md-4">
-              <strong style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900 }}>North Media is a creative and digital growth agency.</strong>
+              <strong style={{ fontFamily: "'Helvetica Now Display ExtraBold', 'Arial Black', sans-serif", fontWeight: 900 }}>Anorth Media is a creative and digital growth agency.</strong>
             </p>
             <p className="mb-3 mb-md-4">
               We believe every brand, artist and business has the potential to reach a wider audience. Our role is to bring that potential to life through thoughtful strategy, creative storytelling and smart digital solutions.
