@@ -25,7 +25,22 @@ function App() {
     return 'light';
   });
   const location = useLocation();
-  const [isIntroDone, setIsIntroDone] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(location.pathname !== '/');
+  const [isFlightDone, setIsFlightDone] = useState(location.pathname !== '/');
+
+  useEffect(() => {
+    if (!isIntroDone || !isFlightDone) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isIntroDone, isFlightDone]);
 
   useEffect(() => {
     if (location.hash) {
@@ -58,7 +73,10 @@ function App() {
   return (
     <LayoutGroup>
       <AnimatePresence>
-        {!isIntroDone && <IntroAnimation key="intro" onComplete={() => setIsIntroDone(true)} />}
+        {!isIntroDone && <IntroAnimation key="intro" theme={theme} onComplete={() => {
+          setIsIntroDone(true);
+          setTimeout(() => setIsFlightDone(true), 2500);
+        }} />}
       </AnimatePresence>
       {isIntroDone && (
         <>

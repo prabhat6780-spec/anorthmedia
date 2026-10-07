@@ -12,12 +12,14 @@ export default function Navbar({ theme, toggleTheme }) {
   const location = useLocation();
   const isExplorePage = location.pathname === '/explore';
   const isHome = location.pathname === '/';
-  const [animateLayout, setAnimateLayout] = useState(true);
+  // Only reserve the 3-second layout animation tracker if we initially landed on the Home page
+  const [animateLayout, setAnimateLayout] = useState(isHome);
 
   useEffect(() => {
+    if (!isHome) return;
     const t = setTimeout(() => setAnimateLayout(false), 3000);
     return () => clearTimeout(t);
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     const handleScroll = () => {
